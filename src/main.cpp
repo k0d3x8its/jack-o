@@ -45,10 +45,14 @@
 #include <Arduino.h>
 #include <Servo.h>
 
+#define JACK_O 1                // leadPumpkin PWM pin
+#define MINION_0 3              // minionPumpkin0 PWM pin
+#define MINION_1 2              // minionPumpkin1 PWM pin
+
 // Define servos for each pumpkin
 Servo leadPumpkin;              // Lead pumpkin (Jack-O)
-Servo minionPumpkin0;           // Backup pumpkin 0 (left)
-Servo minionPumpkin1;           // Backup pumpkin 1 (right)
+Servo pumpkin0;                 // minionPumpkin0 (left)
+Servo pumpkin1;                 // minionPumpkin1 (right)
 
 // Time intervals between syllables (in milliseconds)
 const int syllableDelay = 250;  // Adjust as needed for servo timing
@@ -59,9 +63,14 @@ const int openMouth = 120;
 
 void setup() {
   // Attach servos to their respective pins
-  leadPumpkin.attach(3);        // Pin for lead pumpkin servo
-  minionPumpkin0.attach(1);      // Pin for Minion 0 servo
-  minionPumpkin1.attach(2);      // Pin for Minion 1 servo
+  leadPumpkin.attach(JACK_O);        // Pin for lead pumpkin servo
+  pumpkin0.attach(MINION_0);      // Pin for Minion 0 servo
+  pumpkin1.attach(MINION_1);      // Pin for Minion 1 servo
+
+  // Intialize all pumpkins with closed mouths
+  leadPumpkin.write(closedMouth);
+  pumpkin0.write(closedMouth);
+  pumpkin1.write(closedMouth);
 }
 
 void loop() {
