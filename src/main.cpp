@@ -50,6 +50,13 @@ Servo leadPumpkin;              // Lead pumpkin (Jack-O)
 Servo backupPumpkin0;           // Backup pumpkin 0 (left)
 Servo backupPumpkin1;           // Backup pumpkin 1 (right)
 
+// Time intervals between syllables (in milliseconds)
+const int syllableDelay = 250;  // Adjust as needed for servo timing
+
+// Servo positions
+const int closedMouth = 90;
+const int openMouth = 120;
+
 void setup() {
   // put your setup code here, to run once:
 
