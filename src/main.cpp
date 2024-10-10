@@ -43,6 +43,12 @@
 ******************************************************************************/
 
 #include <Arduino.h>
+#include <Servo.h>
+
+// Define servos for each pumpkin
+Servo leadPumpkin;              // Lead pumpkin (Jack-O)
+Servo backupPumpkin0;           // Backup pumpkin 0 (left)
+Servo backupPumpkin1;           // Backup pumpkin 1 (right)
 
 void setup() {
   // put your setup code here, to run once:
