@@ -3,6 +3,7 @@
 ## v0.3.0a (2024-10-10)
 - **➕:** constant for syllable delays
 - **➕:** constants for opening and closing each pumpkin mouth
+- **♻️:** changed backupPumpkins to minionPumpkins
 
 ## v0.2.0a (2024-10-10)
 - **➕:** servo library
