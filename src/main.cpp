@@ -1,6 +1,6 @@
 /******************************************************************************
 * + Project: Jack-O & The Lanterns                                            *
-* + Version: 0.3.0a                                                           *
+* + Version: 0.4.0a                                                           *
 * + Description: Animatronic singing pumpkin trio                             *
 * + Board: Feather Huzzah ESP8266                                             *
 * + Sensor: N/A                                                               *
