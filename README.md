@@ -15,7 +15,7 @@ Jack-O &amp; The Lanterns; a spooky-fun animatronic singing pumpkin trio synchro
 - **Enhanced Animatronics:** Add more complex mouth movements or even animate other parts of the pumpkins (like eyes)
 - **Interactive Elements:** Make the pumpkins motion-activated so they only perform when someone approaches, adding a surprise element
 - **Improved Audio:** Upgrade to higher-quality speakers or incorporate additional sound effects
-- **Different Songs:** Swap out the Ghostbusters theme with another spooky song or your favorite Halloween anthem
+- **Different Songs:** Swap out the Ghostbusters theme with another spooky song or another Halloween anthemed song
 - **Lighting Effects:** Enhance the pumpkins with LED lights to give them a glow that syncs with the music, adding even more visual appeal
 
 ## Hardware Requirements
