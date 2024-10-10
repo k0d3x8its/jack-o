@@ -47,8 +47,8 @@
 
 // Define servos for each pumpkin
 Servo leadPumpkin;              // Lead pumpkin (Jack-O)
-Servo backupPumpkin0;           // Backup pumpkin 0 (left)
-Servo backupPumpkin1;           // Backup pumpkin 1 (right)
+Servo minionPumpkin0;           // Backup pumpkin 0 (left)
+Servo minionPumpkin1;           // Backup pumpkin 1 (right)
 
 // Time intervals between syllables (in milliseconds)
 const int syllableDelay = 250;  // Adjust as needed for servo timing
