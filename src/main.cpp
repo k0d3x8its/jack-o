@@ -26,8 +26,8 @@
 *                SCK = [ ]-|D14 ~  *    ~ D15|-[ ]                            *
 *             ~ MOSI = [ ]-|D13  Feather ~ D0|-[ ] = Board LED/Bootloader     * 
 *             ~ MISO = [ ]-|D12  Huzzah ~ D16|-[ ] = WAKE                     *
-*                RX--> [ ]-|D3 ~         ~ D2|-[ ]                            * 
-*                TX <--[ ]-|D1 ~         ~ D5|-[ ] = SCL                      * 
+*   Minion0 <=== RX--> [*]-|D3 ~         ~ D2|-[*] ===> Minion1               * 
+*    Jack-O <=== TX <--[*]-|D1 ~         ~ D5|-[ ] = SCL                      * 
 *                 EN = [ ]-|CHPD         ~ D4|-[ ] = SDA                      * 
 *                           \_______________/                                 *                           
 *                                                                             *                               
@@ -58,8 +58,10 @@ const int closedMouth = 90;
 const int openMouth = 120;
 
 void setup() {
-  // put your setup code here, to run once:
-
+  // Attach servos to their respective pins
+  leadPumpkin.attach(3);        // Pin for lead pumpkin servo
+  minionPumpkin0.attach(1);      // Pin for Minion 0 servo
+  minionPumpkin1.attach(2);      // Pin for Minion 1 servo
 }
 
 void loop() {
