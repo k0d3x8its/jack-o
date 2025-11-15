@@ -1,6 +1,6 @@
 /******************************************************************************
 * + Project: Jack-O & The Lanterns                                            *
-* + Version: 0.4.0a                                                           *
+* + Version: 0.6.0a                                                           *
 * + Description: Animatronic singing pumpkin trio                             *
 * + Board: Feather Huzzah ESP8266                                             *
 * + Sensor: N/A                                                               *
@@ -50,12 +50,12 @@
 #define MINION_1 2                // minionPumpkin1 PWM pin
 
 // Define servos for each pumpkin
-Servo leadPumpkin;                // Lead pumpkin (Jack-O)
-Servo pumpkin0;                   // minionPumpkin0 (left)
-Servo pumpkin1;                   // minionPumpkin1 (right)
+Servo jackO;                     // Lead pumpkin (Jack-O)
+Servo minion0;                   // minionPumpkin0 (left)
+Servo minion1;                   // minionPumpkin1 (right)
 
 // Time intervals between syllables (in milliseconds)
-const int syllableDelay = 250;    // Adjust as needed for servo timing
+const int syllableDelay = 250;   // Adjust as needed for servo timing
 
 // Servo positions
 const int closedMouth = 90;
@@ -63,17 +63,27 @@ const int openMouth = 120;
 
 void setup() {
   // Attach servos to their respective pins
-  leadPumpkin.attach(JACK_O);     // Pin for lead pumpkin servo
-  pumpkin0.attach(MINION_0);      // Pin for Minion 0 servo
-  pumpkin1.attach(MINION_1);      // Pin for Minion 1 servo
+  jackO.attach(JACK_O);         // Pin for lead pumpkin servo
+  minion0.attach(MINION_0);     // Pin for Minion 0 servo
+  minion1.attach(MINION_1);     // Pin for Minion 1 servo
 
   // Intialize all pumpkins with closed mouths
-  leadPumpkin.write(closedMouth);
-  pumpkin0.write(closedMouth);
-  pumpkin1.write(closedMouth);
+  jackO.write(closedMouth);
+  minion0.write(closedMouth);
+  minion1.write(closedMouth);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Jack-O sings "If there's something strange"
+  moveJack0();
+
+  // Jack-O sings "...in the neighborhood"
+  moveJack0();
+
+  // Jack-O sings "who ya gonna call"
+  moveJack0();
+
+  // The Lanterns sing "Ghostbusters!"
+  moveTheLanterns();
 
 }
