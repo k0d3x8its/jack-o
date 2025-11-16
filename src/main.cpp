@@ -75,15 +75,22 @@ void setup() {
 
 void loop() {
   // Jack-O sings "If there's something strange"
-  moveJack0();
+  moveJackO();
 
   // Jack-O sings "...in the neighborhood"
-  moveJack0();
+  moveJackO();
 
   // Jack-O sings "who ya gonna call"
-  moveJack0();
+  moveJackO();
 
   // The Lanterns sing "Ghostbusters!"
   moveTheLanterns();
 
+}
+
+// Moves Jack-O's mouth for one syllable
+void moveJackO() {
+  jackO.write(openMouth);     // Open mouth 120 degrees
+  delay(syllableDelay);       // Keep mouth open for the duration of one syllable
+  jackO.write(closedMouth);   // Close mouth to 90 degrees (resting position)
 }
