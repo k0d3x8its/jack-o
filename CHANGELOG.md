@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.7.0a (2025-10-14)
+
+- **➕:** Jack-O function for mouth movement
+
 ## v0.6.0a (2025-10-14)
 
 - **➕:** loop framework concept
