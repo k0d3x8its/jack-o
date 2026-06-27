@@ -45,22 +45,36 @@
 #include <Arduino.h>
 #include <Servo.h>
 
+// ─────────────────────────────────────────────────────────────
+// Pin assignments
+// ─────────────────────────────────────────────────────────────
 #define JACK_O 1                  // leadPumpkin PWM pin
 #define MINION_0 3                // minionPumpkin0 PWM pin
 #define MINION_1 2                // minionPumpkin1 PWM pin
 
-// Define servos for each pumpkin
+// ─────────────────────────────────────────────────────────────
+// Servo objects for each pumpkin
+// ─────────────────────────────────────────────────────────────
 Servo jackO;                     // Lead pumpkin (Jack-O)
 Servo minion0;                   // minionPumpkin0 (left)
 Servo minion1;                   // minionPumpkin1 (right)
 
-// Time intervals between syllables (in milliseconds)
-const int syllableDelay = 250;   // Adjust as needed for servo timing
+// ─────────────────────────────────────────────────────────────
+// Timing & positions
+// ─────────────────────────────────────────────────────────────
+const int syllableDelay = 250;    // Adjust as needed for servo timing
+const int closedMouth = 90;       // servo angle for mouth closed
+const int openMouth = 120;        // servo angle for mouth opened
 
-// Servo positions
-const int closedMouth = 90;
-const int openMouth = 120;
+// ─────────────────────────────────────────────────────────────
+// Forward declarations for helper functions used in loop()
+// ─────────────────────────────────────────────────────────────
+void moveJackO();
+void moveTheLanterns();
 
+// ─────────────────────────────────────────────────────────────
+// Setup: attach servos & start in closed position
+// ─────────────────────────────────────────────────────────────
 void setup() {
   // Attach servos to their respective pins
   jackO.attach(JACK_O);         // Pin for lead pumpkin servo
@@ -73,6 +87,9 @@ void setup() {
   minion1.write(closedMouth);
 }
 
+// ─────────────────────────────────────────────────────────────
+// Loop: simple demo pattern for first verse/chorus fragment
+// ─────────────────────────────────────────────────────────────
 void loop() {
   // Jack-O sings "If there's something strange"
   moveJackO();
@@ -88,9 +105,23 @@ void loop() {
 
 }
 
-// Moves Jack-O's mouth for one syllable
+// ─────────────────────────────────────────────────────────────
+// Lead pumpkin: open → hold → close for ONE syllable
+// ─────────────────────────────────────────────────────────────
 void moveJackO() {
   jackO.write(openMouth);     // Open mouth 120 degrees
   delay(syllableDelay);       // Keep mouth open for the duration of one syllable
   jackO.write(closedMouth);   // Close mouth to 90 degrees (resting position)
+}
+
+// ─────────────────────────────────────────────────────────────
+// Minions: both open → hold → close for ONE syllable
+// (used for "Ghostbusters!" backup)
+// ─────────────────────────────────────────────────────────────
+void moveTheLanterns() {
+  minion0.write(openMouth);     // minion0 opens mouth
+  minion1.write(openMouth);     // minion1 opens mouth
+  delay(syllableDelay);         // delay keeps both mouths open
+  minion0.write(closedMouth);   // minion0 closes mouth
+  minion1.write(closedMouth);   // minion1 closes mouth
 }
